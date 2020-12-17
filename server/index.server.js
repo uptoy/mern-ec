@@ -7,6 +7,8 @@ const mongoose = require('mongoose');
 const userRoutes = require('./routes/user.auth')
 const adminRoutes = require('./routes/admin/admin.auth')
 const categoryRoutes = require('./routes/category')
+const productRoutes = require('./routes/product')
+
 
 env.config()
 
@@ -27,6 +29,8 @@ app.use(express.json())
 app.use('/api', userRoutes)
 app.use('/api', adminRoutes)
 app.use('/api', categoryRoutes)
+app.use('/api', productRoutes)
+
 
 
 app.listen(process.env.PORT, () => {
